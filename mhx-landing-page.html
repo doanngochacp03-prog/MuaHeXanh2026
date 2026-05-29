@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mùa Hè Xanh 2025 — CLB TCT</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #1a5fc8;
+    --blue-dark: #0e3d8a;
+    --blue-light: #3a7fe8;
+    --blue-pale: #e8f0fd;
+    --blue-mid: #c2d6f8;
+    --green: #2ecc71;
+    --green-dark: #1a9e52;
+    --gold: #f5a623;
+    --white: #ffffff;
+    --off-white: #f7f9fc;
+    --text: #1a1f2e;
+    --text-light: #5a6476;
+    --border: #dce6f5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background: var(--off-white);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 40px;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+  }
+  .nav-logo-icon {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: var(--blue);
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 16px;
+  }
+  .nav-logo-text {
+    font-size: 15px; font-weight: 600; color: var(--blue-dark);
+    letter-spacing: 0.02em;
+  }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a {
+    font-size: 13px; font-weight: 500; color: var(--text-light);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--blue); }
+  .nav-cta {
+    background: var(--blue); color: white;
+    padding: 9px 20px; border-radius: 8px;
+    font-size: 13px; font-weight: 600;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--blue-dark); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, var(--blue-dark) 0%, var(--blue) 50%, #2563d4 100%);
+    display: flex; align-items: center;
+    padding: 100px 40px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -2px; left: 0; right: 0; height: 80px;
+    background: var(--off-white);
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+  .hero-inner {
+    max-width: 1100px; margin: 0 auto; width: 100%;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    position: relative; z-index: 1;
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 6px 14px; border-radius: 20px;
+    font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.9);
+    margin-bottom: 20px; letter-spacing: 0.05em;
+  }
+  .hero-tag-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 5vw, 58px);
+    font-weight: 900; color: white;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .hero h1 span { color: #7dd3fc; }
+  .hero-sub {
+    font-size: 16px; color: rgba(255,255,255,0.75);
+    margin-bottom: 32px; font-weight: 300;
+    max-width: 400px;
+  }
+  .hero-meta {
+    display: flex; gap: 24px; margin-bottom: 36px; flex-wrap: wrap;
+  }
+  .hero-meta-item {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; color: rgba(255,255,255,0.8);
+  }
+  .hero-meta-icon { font-size: 16px; }
+  .hero-btns { display: flex; gap: 12px; }
+  .btn-primary {
+    background: white; color: var(--blue);
+    padding: 13px 28px; border-radius: 10px;
+    font-size: 14px; font-weight: 600;
+    text-decoration: none; transition: all 0.2s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+  .btn-secondary {
+    border: 1.5px solid rgba(255,255,255,0.5); color: white;
+    padding: 13px 28px; border-radius: 10px;
+    font-size: 14px; font-weight: 500;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+  /* HERO STATS CARD */
+  .hero-card {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 28px;
+  }
+  .hero-card-title {
+    font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.7);
+    letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 20px;
+  }
+  .stat-row {
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .stat-item { }
+  .stat-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .stat-name { font-size: 13px; font-weight: 500; color: white; }
+  .stat-num { font-size: 12px; color: rgba(255,255,255,0.7); }
+  .progress-bar {
+    height: 6px; background: rgba(255,255,255,0.15); border-radius: 3px; overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%; border-radius: 3px; transition: width 1s ease;
+    background: linear-gradient(90deg, #7dd3fc, #38bdf8);
+  }
+  .progress-fill.green { background: linear-gradient(90deg, #6ee7b7, #34d399); }
+  .progress-fill.gold { background: linear-gradient(90deg, #fde68a, #fbbf24); }
+  .hero-card-total {
+    margin-top: 20px; padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .total-label { font-size: 12px; color: rgba(255,255,255,0.6); }
+  .total-amount { font-size: 20px; font-weight: 700; color: white; }
+
+  /* SECTION */
+  section { padding: 80px 40px; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-tag {
+    display: inline-block;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--blue); margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700; color: var(--text);
+    margin-bottom: 12px; line-height: 1.25;
+  }
+  .section-desc {
+    font-size: 15px; color: var(--text-light);
+    max-width: 560px; margin-bottom: 48px;
+  }
+
+  /* STORY STRIP */
+  .story-strip {
+    background: var(--blue-pale);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .story-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  }
+  .story-card {
+    padding: 36px 32px;
+    border-right: 1px solid var(--border);
+    position: relative;
+  }
+  .story-card:last-child { border-right: none; }
+  .story-avatar {
+    width: 52px; height: 52px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; margin-bottom: 14px;
+  }
+  .avatar-blue { background: var(--blue-mid); }
+  .avatar-green { background: #d1fae5; }
+  .avatar-gold { background: #fef3c7; }
+  .story-role {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--blue); margin-bottom: 6px;
+  }
+  .story-name { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+  .story-quote {
+    font-size: 13px; color: var(--text-light); line-height: 1.65;
+    font-style: italic;
+  }
+  .story-tag {
+    display: inline-block; margin-top: 14px;
+    font-size: 11px; font-weight: 500; color: var(--blue);
+    text-decoration: underline; cursor: pointer;
+  }
+
+  /* ACTIVITIES */
+  .activities-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+  }
+  .activity-card {
+    background: white; border: 1px solid var(--border);
+    border-radius: 16px; padding: 28px;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .activity-card:hover { box-shadow: 0 8px 32px rgba(26,95,200,0.1); border-color: var(--blue-mid); }
+  .activity-header { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 20px; }
+  .activity-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    background: var(--blue-pale); display: flex; align-items: center;
+    justify-content: center; font-size: 22px; flex-shrink: 0;
+  }
+  .activity-title { font-size: 17px; font-weight: 600; margin-bottom: 4px; }
+  .activity-loc { font-size: 12px; color: var(--text-light); }
+  .activity-desc { font-size: 13px; color: var(--text-light); margin-bottom: 20px; line-height: 1.65; }
+
+  /* ITEMS LIST */
+  .items-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+  .item-row { }
+  .item-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+  .item-name { font-size: 13px; font-weight: 500; }
+  .item-status {
+    font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 4px;
+  }
+  .status-need { background: #fef9ec; color: #b45309; }
+  .status-done { background: #ecfdf5; color: #065f46; }
+  .item-bar { height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
+  .item-fill { height: 100%; border-radius: 3px; background: var(--blue); }
+  .item-fill.full { background: var(--green); }
+  .item-sub { font-size: 11px; color: var(--text-light); margin-top: 3px; }
+
+  .activity-footer { border-top: 1px solid var(--border); padding-top: 16px; }
+  .activity-cta {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 600; color: var(--blue);
+    text-decoration: none; cursor: pointer;
+  }
+  .activity-cta:hover { text-decoration: underline; }
+  .activity-total {
+    font-size: 12px; color: var(--text-light); margin-top: 4px;
+  }
+
+  /* PAYMENT SECTION */
+  .payment-section { background: white; border-top: 1px solid var(--border); }
+  .payment-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
+  }
+  .payment-left { }
+  .payment-box {
+    background: var(--off-white); border: 1px solid var(--border);
+    border-radius: 16px; padding: 28px; margin-top: 24px;
+  }
+  .payment-box-title { font-size: 13px; font-weight: 600; margin-bottom: 16px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.06em; }
+  .bank-row { display: flex; justify-content: space-between; margin-bottom: 10px; }
+  .bank-label { font-size: 13px; color: var(--text-light); }
+  .bank-value { font-size: 13px; font-weight: 600; color: var(--text); }
+  .bank-value.big { font-size: 20px; color: var(--blue); font-family: 'Playfair Display', serif; letter-spacing: 0.04em; }
+  .qr-placeholder {
+    width: 120px; height: 120px; background: var(--blue-pale);
+    border: 2px dashed var(--blue-mid); border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px; margin: 16px auto 0;
+  }
+  .payment-note {
+    background: #fef9ec; border: 1px solid #fde68a; border-radius: 10px;
+    padding: 14px 16px; margin-top: 16px;
+    font-size: 12px; color: #92400e; line-height: 1.6;
+  }
+  .payment-note strong { font-weight: 600; }
+
+  /* FORM */
+  .form-box {
+    background: var(--blue-pale); border: 1px solid var(--blue-mid);
+    border-radius: 16px; padding: 28px;
+  }
+  .form-title { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+  .form-sub { font-size: 13px; color: var(--text-light); margin-bottom: 20px; }
+  .form-group { margin-bottom: 14px; }
+  .form-label { font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 6px; display: block; }
+  .form-input, .form-select {
+    width: 100%; padding: 10px 14px;
+    border: 1px solid var(--border); border-radius: 8px;
+    font-size: 13px; font-family: 'Be Vietnam Pro', sans-serif;
+    background: white; color: var(--text);
+    transition: border-color 0.2s;
+  }
+  .form-input:focus, .form-select:focus {
+    outline: none; border-color: var(--blue);
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .form-submit {
+    width: 100%; padding: 13px;
+    background: var(--blue); color: white; border: none; border-radius: 10px;
+    font-size: 14px; font-weight: 600; cursor: pointer;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    transition: background 0.2s; margin-top: 4px;
+  }
+  .form-submit:hover { background: var(--blue-dark); }
+  .form-privacy { font-size: 11px; color: var(--text-light); margin-top: 10px; text-align: center; }
+
+  /* AFTER SECTION */
+  .after-section { background: var(--blue-dark); }
+  .after-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 12px; }
+  .after-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px; padding: 24px;
+  }
+  .after-card-icon { font-size: 28px; margin-bottom: 12px; }
+  .after-card-title { font-size: 14px; font-weight: 600; color: white; margin-bottom: 6px; }
+  .after-card-desc { font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+  .after-section .section-tag { color: #7dd3fc; }
+  .after-section .section-title { color: white; }
+  .after-section .section-desc { color: rgba(255,255,255,0.65); }
+  .countdown-strip {
+    background: rgba(255,255,255,0.06); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 32px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .countdown-label { font-size: 12px; color: rgba(255,255,255,0.6); }
+  .countdown-date { font-size: 16px; font-weight: 600; color: white; }
+  .countdown-sep { color: rgba(255,255,255,0.2); }
+
+  /* FOOTER */
+  footer {
+    background: white; border-top: 1px solid var(--border);
+    padding: 32px 40px;
+  }
+  .footer-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-left { font-size: 13px; color: var(--text-light); }
+  .footer-left strong { color: var(--text); font-weight: 600; }
+  .footer-right { font-size: 12px; color: var(--text-light); }
+
+  /* MOCKUP BADGE */
+  .mockup-badge {
+    position: fixed; bottom: 20px; right: 20px; z-index: 999;
+    background: var(--gold); color: white;
+    padding: 8px 14px; border-radius: 8px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-left > * { animation: fadeUp 0.6s ease both; }
+  .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-left > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-left > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero-left > *:nth-child(4) { animation-delay: 0.4s; }
+  .hero-left > *:nth-child(5) { animation-delay: 0.5s; }
+  .hero-card { animation: fadeUp 0.6s ease 0.4s both; }
+</style>
+</head>
+<body>
+
+<div class="mockup-badge">✦ MOCKUP — TCT × MHX 2025</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-icon">🌿</div>
+    <span class="nav-logo-text">TCT · Mùa Hè Xanh 2025</span>
+  </div>
+  <div class="nav-links">
+    <a href="#hoat-dong">Hoạt động</a>
+    <a href="#dong-hanh">Đồng hành</a>
+    <a href="#sau-su-kien">Sau sự kiện</a>
+    <a href="#chuyen-ke">Câu chuyện</a>
+  </div>
+  <a href="#dong-hanh" class="nav-cta">Đồng hành ngay →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-tag">
+        <span class="hero-tag-dot"></span>
+        CLB Thanh niên Tình nguyện Marketing · ĐH Thương Mại
+      </div>
+      <h1>Mùa Hè <span>Xanh</span><br>2025</h1>
+      <p class="hero-sub">7 ngày, một thôn nhỏ ở Lạng Sơn — và những thay đổi nhỏ có thể theo một người cả đời.</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item"><span class="hero-meta-icon">📍</span> Thôn Nà Chuông, Lạng Sơn</div>
+        <div class="hero-meta-item"><span class="hero-meta-icon">📅</span> Tháng 7 · 2025</div>
+        <div class="hero-meta-item"><span class="hero-meta-icon">👥</span> 60 tình nguyện viên</div>
+      </div>
+      <div class="hero-btns">
+        <a href="#dong-hanh" class="btn-primary">Đồng hành cùng chúng mình</a>
+        <a href="#hoat-dong" class="btn-secondary">Xem hoạt động</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="hero-card-title">Tiến độ đồng hành · Cập nhật hôm nay</div>
+      <div class="stat-row">
+        <div class="stat-item">
+          <div class="stat-top">
+            <span class="stat-name">🏮 Thắp sáng đường làng</span>
+            <span class="stat-num">28 / 47 đèn</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" style="width:60%"></div></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-top">
+            <span class="stat-name">📚 Thư viện sách</span>
+            <span class="stat-num">210 / 300 cuốn</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill green" style="width:70%"></div></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-top">
+            <span class="stat-name">🛒 Phiên chợ 0 đồng</span>
+            <span class="stat-num">67%</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill gold" style="width:67%"></div></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-top">
+            <span class="stat-name">🏠 Sửa nhà tạm</span>
+            <span class="stat-num">3 / 5 nhà</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" style="width:60%"></div></div>
+        </div>
+      </div>
+      <div class="hero-card-total">
+        <span class="total-label">Tổng đã nhận được</span>
+        <span class="total-amount">28.400.000 đ</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY STRIP -->
+<section class="story-strip" id="chuyen-ke" style="padding: 0;">
+  <div class="story-inner">
+    <div class="story-card">
+      <div class="story-avatar avatar-blue">👧</div>
+      <div class="story-role">Nhân vật · Người thụ hưởng</div>
+      <div class="story-name">Hoàng Thị Lan, 9 tuổi</div>
+      <p class="story-quote">"Lan đi bộ 4km đến trường mỗi ngày. Năm nay sẽ là năm đầu tiên em có một cuốn sách giáo khoa mới chưa qua tay ai."</p>
+      <span class="story-tag">Theo dõi câu chuyện của Lan →</span>
+    </div>
+    <div class="story-card">
+      <div class="story-avatar avatar-gold">👴</div>
+      <div class="story-role">Nhân vật · Người chứng kiến</div>
+      <div class="story-name">Bác Nông Văn Tám, 62 tuổi</div>
+      <p class="story-quote">"Mấy chục năm ở đây, bác chưa thấy con đường thôn sáng bao giờ. Thấy bọn trẻ từ Hà Nội lên, bác không biết nói gì."</p>
+      <span class="story-tag">Nghe bác Tám kể →</span>
+    </div>
+    <div class="story-card">
+      <div class="story-avatar avatar-green">🧑</div>
+      <div class="story-role">Nhân vật · Tình nguyện viên</div>
+      <div class="story-name">Nguyễn Minh Hiếu, năm nhất</div>
+      <p class="story-quote">"Hôm đăng ký mình cũng không chắc mình đủ sức. Nhưng có một thứ khiến mình bấm nộp đơn — mình muốn biết mình làm được gì."</p>
+      <span class="story-tag">Đi cùng Hiếu 7 ngày →</span>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVITIES -->
+<section id="hoat-dong" style="background: var(--off-white);">
+  <div class="section-inner">
+    <span class="section-tag">Hoạt động</span>
+    <h2 class="section-title">Chúng mình sẽ làm gì<br>trong 7 ngày?</h2>
+    <p class="section-desc">Mỗi hoạt động được lên kế hoạch cụ thể — bạn có thể chọn đúng thứ mình muốn tham gia tạo ra.</p>
+
+    <div class="activities-grid">
+
+      <!-- Card 1 -->
+      <div class="activity-card">
+        <div class="activity-header">
+          <div class="activity-icon">🏮</div>
+          <div>
+            <div class="activity-title">Thắp sáng đường làng</div>
+            <div class="activity-loc">Con đường chính thôn Nà Chuông · 2,3km</div>
+          </div>
+        </div>
+        <p class="activity-desc">Lắp đặt 47 bóng đèn năng lượng mặt trời dọc con đường chính — con đường mà bác Tám và hàng xóm đã đi trong bóng tối hơn 30 năm. Đơn giá mỗi bóng: 800.000đ.</p>
+        <div class="items-list">
+          <div class="item-row">
+            <div class="item-top">
+              <span class="item-name">Đèn số 1–20 (đoạn đầu thôn)</span>
+              <span class="item-status status-done">✓ Đủ rồi</span>
+            </div>
+            <div class="item-bar"><div class="item-fill full" style="width:100%"></div></div>
+          </div>
+          <div class="item-row">
+            <div class="item-top">
+              <span class="item-name">Đèn số 21–35 (giữa thôn)</span>
+              <span class="item-status status-need">Còn thiếu 7</span>
+            </div>
+            <div class="item-bar"><div class="item-fill" style="width:53%"></div></div>
+            <div class="item-sub">Đã nhận 8/15 đèn</div>
+          </div>
+          <div class="item-row">
+            <div class="item-top">
+              <span class="item-name">Đèn số 36–47 (cuối thôn)</span>
+              <span class="item-status status-need">Còn thiếu 12</span>
+            </div>
+            <div class="item-bar"><div class="item-fill" style="width:0%"></div></div>
+            <div class="item-sub">Chưa có đèn nào</div>
+          </div>
+        </div>
+        <div class="activity-footer">
+          <a class="activity-cta" href="#dong-hanh">Tài trợ 1 bóng đèn → 800.000đ</a>
+          <div class="activity-total">28 / 47 đèn · Còn cần: 15.200.000đ</div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="activity-card">
+        <div class="activity-header">
+          <div class="activity-icon">📚</div>
+          <div>
+            <div class="activity-title">Thư viện sách</div>
+            <div class="activity-loc">Trường Tiểu học Nà Chuông · 200 học sinh</div>
+          </div>
+        </div>
+        <p class="activity-desc">Trường có 200 học sinh nhưng thư viện chỉ có 12 cuốn sách. Chúng mình cần 300 cuốn sách phù hợp cấp 1–2 để lập một góc đọc sách thật sự. Bạn có thể gửi sách trực tiếp hoặc quy đổi thành tiền.</p>
+        <div class="items-list">
+          <div class="item-row">
+            <div class="item-top">
+              <span class="item-name">Sách giáo khoa & tham khảo</span>
+              <span class="item-status status-done">✓ Đủ rồi</span>
+            </div>
+            <div class="item-bar"><div class="item-fill full" style="width:100%"></div></div>
+          </div>
+          <div class="item-row">
+            <div class="item-top">
+              <span class="item-name">Truyện tranh, truyện thiếu nhi</span>
+              <span class="item-status status-need">Còn thiếu 60</span>
+            </div>
+            <div class="item-bar"><div class="item-fill" style="width:55%"></div></div>
+            <div class="item-sub">Đã nhận 90/150 cuốn</div>
+          </div>
+          <div class="item-row">
+            <div class="item-top">
+              <span class="item-name">Sách khoa học, tự nhiên</span>
+              <span class="item-status status-need">Còn thiếu 30</span>
+            </div>
+            <div class="item-bar"><div class="item-fill" style="width:25%"></div></div>
+            <div class="item-sub">Đã nhận 20/50 cuốn</div>
+          </div>
+        </div>
+        <div class="activity-footer">
+          <a class="activity-cta" href="#dong-hanh">Gửi sách hoặc quyên góp →</a>
+          <div class="activity-total">210 / 300 cuốn · Nhận sách tại Hà Nội, T2–T6 8–17h</div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="activity-card">
+        <div class="activity-header">
+          <div class="activity-icon">🛒</div>
+          <div>
+            <div class="activity-title">Phiên chợ 0 đồng</div>
+            <div class="activity-loc">Nhà văn hoá thôn · Ngày 3 của sự kiện</div>
+          </div>
+        </div>
+        <p class="activity-desc">Một phiên chợ nơi người dân đến và lấy những gì họ cần — không phải nhận từ thiện, mà là mua sắm theo cách của họ. Chúng mình cần các mặt hàng thiết yếu dưới đây.</p>
+        <div class="items-list">
+          <div class="item-row">
+            <div class="item-top">
+              <span class="item-name">Vở ô ly, bút mực (học sinh)</span>
+              <span class="item-status status-need">Còn 80 bộ</span>
+            </div>
+            <div class="item-bar"><div class="item-fill" style="width:20%"></div></div>
+            <div class="item-sub">20/100 bộ · ~15.000đ/bộ</div>
+          </div>
+          <div class="item-row">
+            <div class="item-top">
+              <span class="item-name">Dầu ăn, mắm, muối</span>
+              <span class="item-status status-done">✓ Đủ rồi</span>
+            </div>
+            <div class="item-bar"><div class="item-fill full" style="width:100%"></div></div>
+          </div>
+          <div class="item-row">
+            <div class="item-top">
+              <span class="item-name">Quần áo trẻ em (size 4–12)</span>
+              <span class="item-status status-need">Còn thiếu</span>
+            </div>
+            <div class="item-bar"><div class="item-fill" style="width:40%"></div></div>
+            <div class="item-sub">Nhận đồ còn tốt, sạch</div>
+          </div>
+        </div>
+        <div class="activity-footer">
+          <a class="activity-cta" href="#dong-hanh">Xem danh sách đầy đủ →</a>
+          <div class="activity-total">Tổng cần quyên góp: ~12.000.000đ</div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="activity-card">
+        <div class="activity-header">
+          <div class="activity-icon">🏠</div>
+          <div>
+            <div class="activity-title">Sửa 5 căn nhà tạm</div>
+            <div class="activity-loc">5 hộ gia đình có hoàn cảnh khó khăn</div>
+          </div>
+        </div>
+        <p class="activity-desc">Năm ngôi nhà, năm hoàn cảnh khác nhau. Bạn có thể chọn góp vào ngôi nhà cụ thể và hạng mục cụ thể — từ mái tôn, xi măng nền đến cột chống.</p>
+        <div class="items-list">
+          <div class="item-row">
+            <div class="item-top">
+              <span class="item-name">Nhà bác Tám · Mái tôn + nền</span>
+              <span class="item-status status-done">✓ Đủ rồi</span>
+            </div>
+            <div class="item-bar"><div class="item-fill full" style="width:100%"></div></div>
+          </div>
+          <div class="item-row">
+            <div class="item-top">
+              <span class="item-name">Nhà cô Thắm · Vách + mái</span>
+              <span class="item-status status-need">Còn 3.200.000đ</span>
+            </div>
+            <div class="item-bar"><div class="item-fill" style="width:60%"></div></div>
+            <div class="item-sub">Đã nhận 4.800.000 / 8.000.000đ</div>
+          </div>
+          <div class="item-row">
+            <div class="item-top">
+              <span class="item-name">Nhà anh Quân · Toàn bộ</span>
+              <span class="item-status status-need">Chưa có</span>
+            </div>
+            <div class="item-bar"><div class="item-fill" style="width:0%"></div></div>
+            <div class="item-sub">Cần: ~12.000.000đ</div>
+          </div>
+        </div>
+        <div class="activity-footer">
+          <a class="activity-cta" href="#dong-hanh">Chọn ngôi nhà muốn góp →</a>
+          <div class="activity-total">3 / 5 nhà đã đủ kinh phí</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT -->
+<section class="payment-section" id="dong-hanh">
+  <div class="section-inner">
+    <div class="payment-grid">
+      <div class="payment-left">
+        <span class="section-tag">Đồng hành</span>
+        <h2 class="section-title">Chuyển khoản<br>trực tiếp</h2>
+        <p class="section-desc" style="margin-bottom: 0;">100% số tiền được dùng cho hoạt động tại địa phương. Chúng mình sẽ gửi bằng chứng về cho bạn sau khi sự kiện kết thúc.</p>
+
+        <div class="payment-box">
+          <div class="payment-box-title">Thông tin chuyển khoản</div>
+          <div class="bank-row">
+            <span class="bank-label">Ngân hàng</span>
+            <span class="bank-value">Vietcombank</span>
+          </div>
+          <div class="bank-row">
+            <span class="bank-label">Chủ tài khoản</span>
+            <span class="bank-value">CLB TCT – ĐH Thương Mại</span>
+          </div>
+          <div class="bank-row">
+            <span class="bank-label">Số tài khoản</span>
+            <span class="bank-value big">1234 5678 9012</span>
+          </div>
+          <div class="qr-placeholder">📱</div>
+        </div>
+
+        <div class="payment-note">
+          <strong>Nội dung chuyển khoản quan trọng:</strong><br>
+          Ghi rõ: <strong>[Tên] + [Hoạt động]</strong><br>
+          Ví dụ: <em>"Nguyen Van A - Den duong so 7"</em> hoặc <em>"Tran Thi B - Sach thieu nhi"</em><br>
+          → Chúng mình sẽ gửi ảnh đúng thứ bạn đã góp sau sự kiện.
+        </div>
+      </div>
+
+      <div>
+        <div class="form-box">
+          <div class="form-title">Để lại thông tin — nhận phản hồi sau sự kiện</div>
+          <p class="form-sub">Sau khi MHX kết thúc, chúng mình sẽ gửi ảnh/video về đúng hoạt động bạn đã tham gia tạo ra.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Họ và tên</label>
+              <input class="form-input" type="text" placeholder="Nguyễn Văn A">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input class="form-input" type="email" placeholder="email@gmail.com">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Số điện thoại</label>
+            <input class="form-input" type="tel" placeholder="09xx xxx xxx">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Hoạt động muốn đồng hành</label>
+            <select class="form-select">
+              <option value="">Chọn hoạt động...</option>
+              <option>🏮 Thắp sáng đường làng</option>
+              <option>📚 Thư viện sách</option>
+              <option>🛒 Phiên chợ 0 đồng</option>
+              <option>🏠 Sửa nhà tạm</option>
+              <option>✨ Tất cả hoạt động</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Ghi chú (không bắt buộc)</label>
+            <input class="form-input" type="text" placeholder="Ví dụ: Mình muốn tài trợ đèn số 7 cho bác Tám">
+          </div>
+
+          <button class="form-submit">Đăng ký đồng hành →</button>
+          <p class="form-privacy">🔒 Thông tin của bạn chỉ dùng để gửi phản hồi sau sự kiện. Không chia sẻ cho bên thứ ba.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AFTER SECTION -->
+<section class="after-section" id="sau-su-kien">
+  <div class="section-inner">
+    <span class="section-tag">Sau sự kiện</span>
+    <h2 class="section-title">Chúng mình không chỉ đến rồi đi</h2>
+    <p class="section-desc">Bạn sẽ nhận được bằng chứng về điều bạn đã góp phần tạo ra — không phải lời cảm ơn chung chung.</p>
+
+    <div class="countdown-strip">
+      <div>
+        <div class="countdown-label">Sự kiện diễn ra</div>
+        <div class="countdown-date">Tháng 7, 2025 · 7 ngày</div>
+      </div>
+      <span class="countdown-sep">→</span>
+      <div>
+        <div class="countdown-label">Gửi phản hồi cá nhân</div>
+        <div class="countdown-date">Tháng 8, 2025 · Trong vòng 1 tháng</div>
+      </div>
+      <span class="countdown-sep">→</span>
+      <div>
+        <div class="countdown-label">Chuyến nghiệm thu</div>
+        <div class="countdown-date">Tháng 10, 2025 · 3 tháng sau</div>
+      </div>
+    </div>
+
+    <div class="after-grid">
+      <div class="after-card">
+        <div class="after-card-icon">📸</div>
+        <div class="after-card-title">Ảnh nghiệm thu gửi tận tay</div>
+        <p class="after-card-desc">Bạn góp tiền mua đèn số 7 → bạn nhận ảnh đèn số 7 đang sáng. Bạn gửi sách thiếu nhi → bạn nhận ảnh em Lan đang đọc cuốn sách đó.</p>
+      </div>
+      <div class="after-card">
+        <div class="after-card-icon">🗺️</div>
+        <div class="after-card-title">Chuyến thăm lại sau 3 tháng</div>
+        <p class="after-card-desc">Tháng 10/2025, đội TCT quay lại Nà Chuông để kiểm tra và ghi lại: đèn còn sáng không, tủ sách còn được dùng không, ngôi nhà có ổn không.</p>
+      </div>
+      <div class="after-card">
+        <div class="after-card-icon">📋</div>
+        <div class="after-card-title">Báo cáo minh bạch dòng tiền</div>
+        <p class="after-card-desc">Toàn bộ thu chi được công bố công khai trên trang này sau sự kiện — từng hạng mục, từng con số, có chứng từ đi kèm.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <strong>CLB Thanh niên Tình nguyện Marketing · TCT</strong><br>
+      Khoa Marketing, Trường Đại học Thương Mại Hà Nội
+    </div>
+    <div class="footer-right">
+      Liên hệ: tct.tmu@gmail.com · facebook.com/tct.tmu
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
